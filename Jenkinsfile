@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Customize testing commands based on your framework and container environment
-                    bat 'docker run -d --name project1container2 -p 8102:80 mani_project1_image sleep infinity'
+                    bat 'docker run -d --name project1container3 -p 8103:80 mani_project1_image sleep infinity'
                 }
             }
         }
