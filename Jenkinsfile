@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Customize testing commands based on your framework and container environment
-                    bat 'docker run -d --name project1container4 -p 8104:80 mani_project1_image sleep infinity'
+                    bat 'docker run -d --name project1container5 -p 8105:80 mani_project1_image sleep infinity'
                 }
             }
         }
@@ -25,8 +25,8 @@ pipeline {
             steps {
                 script {
                     // Securely store Docker registry credentials in Jenkins Credentials Management
-                    def credentials = secretsManager.credentials(id: 'dockerhub-credentials') {
-                       docker login -u credentials.username -p credentials.password
+                    def credentials = secretsManager.credentials(id: 'dockerhub-credentials') 
+                       docker login -u credentials.username -p credentials.password {
                         bat 'docker tag mani_project1_image manikanta5315/maniproject1'
                         bat 'docker push manikanta5315/maniproject1'
                     
