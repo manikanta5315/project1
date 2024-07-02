@@ -8,7 +8,7 @@ pipeline {
                     url: 'https://github.com/manikanta5315/project1.git' // Replace with your Git repository URL
             }
         }
-        stage('Build Docker Image') {
+        stage('Building Docker Image') {
             steps {
                 bat 'docker build -t mani_project1_image .' // Replace with your image name
             }
