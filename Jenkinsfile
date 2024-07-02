@@ -11,13 +11,14 @@ pipeline {
         stage('Building Docker Image') {
             steps {
                 bat 'docker build -t mani_project1_image .' // Replace with your image name
+                bat 'docker volume create volumeproject1'
             }
         }
         stage('Run Tests (Optional)') {
             steps {
                 script {
                     // Customize testing commands based on your framework and container environment
-                    bat 'docker run -d --name project1container5 -p 8105:80 mani_project1_image sleep infinity'
+                    bat 'docker run -d --name project1container6 -p 8106:80 -v volumeproject1 mani_project1_image sleep infinity'
                 }
             }
         }
