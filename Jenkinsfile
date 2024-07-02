@@ -27,7 +27,7 @@ pipeline {
                 script {
                     // Securely store Docker registry credentials in Jenkins Credentials Management
                     def credentials = secretsManager.credentials(id: 'dockerhub-credentials') 
-                       docker login -u credentials.username -p credentials.password 
+                       docker login -u credentials.username -p credentials.password {
                         bat 'docker tag mani_project1_image manikanta5315/maniproject1'
                         bat 'docker push manikanta5315/maniproject1'
                     
