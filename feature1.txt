@@ -1,0 +1,4 @@
+withCredentials([usernamePassword(credentialsId: 'manikanta5315-dockerhub', passwordVariable: 'password', usernameVariable: 'username')]) {
+    // some block
+}
+
